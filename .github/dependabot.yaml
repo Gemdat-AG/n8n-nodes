@@ -1,0 +1,34 @@
+version: 2
+
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: chore
+
+  - package-ecosystem: 'devcontainers'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: chore
+
+  - package-ecosystem: 'npm'
+    directory: '/'
+    ignore:
+      - dependency-name: '@nx/devkit'
+      - dependency-name: '@nx/eslint'
+      - dependency-name: '@nx/eslint-plugin'
+      - dependency-name: '@nx/jest'
+      - dependency-name: '@nx/js'
+      - dependency-name: '@nx/node'
+      - dependency-name: '@nx/workspace'
+      - dependency-name: '@types/*'
+      - dependency-name: 'n8n-nodes-base'
+      - dependency-name: 'n8n-workflow'
+    schedule:
+      interval: 'weekly'
+    commit-message:
+      prefix: chore

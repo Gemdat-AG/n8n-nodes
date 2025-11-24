@@ -1,0 +1,9 @@
+# GitHub Actions files
+/.github/             @Gemdat-AG/actions-maintainers
+
+# Devcontainer configuration
+/.devcontainer/       @Gemdat-AG//devcontainer-maintainers
+
+# NPM package files
+package.json          @Gemdat-AG/n8n-maintainers
+pnpm-lock.yaml        @Gemdat-AG/n8n-maintainers
