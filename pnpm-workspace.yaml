@@ -1,0 +1,20 @@
+packages:
+  - nodes/**
+
+ignoredBuiltDependencies:
+  - oxc-resolver
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@scarf/scarf'
+  - '@sentry-internal/node-native-stacktrace'
+  - '@swc/core'
+  - canvas
+  - cpu-features
+  - eslint-plugin-n8n-nodes-base
+  - msgpackr-extract
+  - nx
+  - protobufjs
+  - sqlite3
+  - ssh2
+  - unrs-resolver
