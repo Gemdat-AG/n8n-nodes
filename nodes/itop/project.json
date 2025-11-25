@@ -1,0 +1,47 @@
+{
+  "name": "itop",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "nodes/itop/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/nodes/itop",
+        "main": "nodes/itop/src/index.ts",
+        "tsConfig": "nodes/itop/tsconfig.lib.json",
+        "assets": [
+          "nodes/itop/src/nodes/*/*.svg",
+          "nodes/itop/src/nodes/*/*.json",
+          "nodes/itop/*.md"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "nodes/itop/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/link.mjs {projectName}"
+      },
+      "dependsOn": ["build"]
+    },
+    "install": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/install.mjs {projectName}"
+      },
+      "dependsOn": ["link"]
+    }
+  },
+  "tags": []
+}

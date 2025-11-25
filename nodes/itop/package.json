@@ -1,0 +1,44 @@
+{
+  "name": "@gemdat-ag/n8n-nodes-itop",
+  "version": "0.1.0",
+  "description": "iTop community nodes for n8n",
+  "keywords": [
+    "itop",
+    "itsm",
+    "cmdb",
+    "n8n",
+    "n8n-community-node",
+    "n8n-community-node-package"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Gemdat-AG/n8n-nodes/blob/main/nodes/itop/README.md",
+  "author": {
+    "name": "Gemdat AG",
+    "email": "info@gemdat.ch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gemdat-AG/n8n-nodes.git"
+  },
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "type": "commonjs",
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "src/credentials/ITopApi.credentials.js"
+    ],
+    "nodes": [
+      "src/nodes/ITop/ITop.node.js"
+    ]
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "n8n-workflow": "^1.86.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^1.86.0"
+  }
+}
